@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1280" viewBox="0 0 1600 1280" role="img" aria-labelledby="title desc">
+  <title id="title">Health Insurance RAG system architecture</title>
+  <desc id="desc">A fixed two-column diagram showing RAG initialization on the left and the Streamlit application workflow on the right.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#58a6ff"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.28"/>
+    </filter>
+    <style>
+      .canvas { fill: #0d1117; }
+      .panel { fill: #161b22; stroke: #30363d; stroke-width: 2; }
+      .header { fill: #1f6feb; }
+      .header-text { fill: #ffffff; font: 700 27px Arial, sans-serif; text-anchor: middle; }
+      .box { fill: #21262d; stroke: #8b949e; stroke-width: 2; rx: 10; filter: url(#shadow); }
+      .box-accent { fill: #172b4d; stroke: #58a6ff; stroke-width: 2.5; rx: 10; filter: url(#shadow); }
+      .box-green { fill: #16352b; stroke: #3fb950; stroke-width: 2.5; rx: 10; filter: url(#shadow); }
+      .label { fill: #f0f6fc; font: 600 21px Arial, sans-serif; text-anchor: middle; }
+      .small { fill: #c9d1d9; font: 500 18px Arial, sans-serif; text-anchor: middle; }
+      .arrow { fill: none; stroke: #58a6ff; stroke-width: 3; marker-end: url(#arrow); }
+      .cross-arrow { fill: none; stroke: #3fb950; stroke-width: 4; marker-end: url(#arrow); }
+      .cross-label { fill: #7ee787; font: 700 19px Arial, sans-serif; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <rect class="canvas" width="1600" height="1280" rx="18"/>
+
+  <!-- Left column: RAG initialization -->
+  <rect class="panel" x="45" y="35" width="650" height="1200" rx="18"/>
+  <rect class="header" x="45" y="35" width="650" height="70" rx="18"/>
+  <text class="header-text" x="370" y="79">Runtime components</text>
+
+  <rect class="box-accent" x="120" y="135" width="500" height="70"/>
+  <text class="label" x="370" y="178">Start: streamlit run app.py</text>
+
+  <path class="arrow" d="M370 205 L370 234"/>
+  <rect class="box" x="120" y="235" width="500" height="70"/>
+  <text class="label" x="370" y="278">RAG initialization from master_HF.py</text>
+
+  <path class="arrow" d="M370 305 L370 334"/>
+  <rect class="box" x="120" y="335" width="500" height="70"/>
+  <text class="label" x="370" y="378">Policy(knowledge_base).json</text>
+
+  <path class="arrow" d="M370 405 L370 434"/>
+  <rect class="box" x="120" y="435" width="500" height="70"/>
+  <text class="label" x="370" y="478">Clean and create documents</text>
+
+  <path class="arrow" d="M370 505 L370 534"/>
+  <rect class="box" x="120" y="535" width="500" height="70"/>
+  <text class="label" x="370" y="578">Create chunks</text>
+
+  <path class="arrow" d="M370 605 L370 634"/>
+  <rect class="box" x="120" y="635" width="500" height="76"/>
+  <text class="label" x="370" y="681">Create Hugging Face MiniLM embeddings</text>
+
+  <path class="arrow" d="M370 711 L370 754"/>
+  <rect class="box-green" x="120" y="755" width="500" height="86"/>
+  <text class="label" x="370" y="791">Build FAISS vector index</text>
+  <text class="small" x="370" y="819">Stores searchable policy-clause vectors</text>
+
+  <text class="small" x="370" y="970">Built once when the RAG pipeline initializes</text>
+
+  <!-- Right column: application workflow -->
+  <rect class="panel" x="905" y="35" width="650" height="1200" rx="18"/>
+  <rect class="header" x="905" y="35" width="650" height="70" rx="18"/>
+  <text class="header-text" x="1230" y="79">Application workflow — app.py</text>
+
+  <rect class="box-accent" x="980" y="125" width="500" height="76"/>
+  <text class="label" x="1230" y="160">From the Streamlit dashboard</text>
+  <text class="small" x="1230" y="185">User opens the chatbot interface</text>
+
+  <path class="arrow" d="M1230 201 L1230 234"/>
+  <rect class="box" x="980" y="235" width="500" height="76"/>
+  <text class="label" x="1230" y="282">User enters a policy question</text>
+
+  <path class="arrow" d="M1230 311 L1230 344"/>
+  <rect class="box" x="980" y="345" width="500" height="76"/>
+  <text class="label" x="1230" y="391">Process the question in the RAG query flow</text>
+
+  <path class="arrow" d="M1230 421 L1230 454"/>
+  <rect class="box" x="980" y="455" width="500" height="86"/>
+  <text class="label" x="1230" y="506">Convert question into a MiniLM embedding</text>
+
+  <path class="arrow" d="M1230 541 L1230 574"/>
+  <rect class="box-green" x="980" y="575" width="500" height="86"/>
+  <text class="label" x="1230" y="611">FAISS similarity search</text>
+  <text class="small" x="1230" y="639">Compare question vector with clause vectors</text>
+
+  <path class="arrow" d="M1230 661 L1230 694"/>
+  <rect class="box" x="980" y="695" width="500" height="76"/>
+  <text class="label" x="1230" y="730">Retrieve the 3 most similar</text>
+  <text class="small" x="1230" y="756">policy clauses</text>
+
+  <path class="arrow" d="M1230 771 L1230 804"/>
+  <rect class="box" x="980" y="805" width="500" height="86"/>
+  <text class="label" x="1230" y="841">Build the grounded prompt</text>
+  <text class="small" x="1230" y="869">Question plus retrieved policy clauses</text>
+
+  <path class="arrow" d="M1230 891 L1230 924"/>
+  <rect class="box" x="980" y="925" width="500" height="76"/>
+  <text class="label" x="1230" y="972">Generate the answer with Gemini</text>
+
+  <path class="arrow" d="M1230 1001 L1230 1034"/>
+  <rect class="box" x="980" y="1035" width="500" height="76"/>
+  <text class="label" x="1230" y="1070">Return answer, sources</text>
+  <text class="small" x="1230" y="1096">and response latency</text>
+
+  <path class="arrow" d="M1230 1111 L1230 1144"/>
+  <rect class="box-accent" x="980" y="1145" width="500" height="66"/>
+  <text class="label" x="1230" y="1186">Display response in Streamlit</text>
+
+  <!-- Exact cross-column data flow -->
+  <path class="cross-arrow" d="M620 798 C760 798, 790 618, 980 618"/>
+  <rect x="692" y="712" width="220" height="58" rx="9" fill="#0d1117" stroke="#3fb950" stroke-width="2"/>
+  <text class="cross-label" x="802" y="736">Stored clause vectors</text>
+  <text class="small" x="802" y="758">used for matching</text>
+</svg>
