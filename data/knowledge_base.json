@@ -1,0 +1,122 @@
+[
+  {
+    "doc_id": "KB001",
+    "category": "coverage",
+    "title": "Hospitalization Coverage",
+    "content": "The policy covers in-patient hospitalization expenses for a minimum continuous period of 24 hours, including room rent, nursing charges, doctor's fees, ICU charges, and cost of medicines and consumables used during the hospital stay. Room rent is capped at 1% of the sum insured per day, and ICU charges are capped at 2% of the sum insured per day, unless the policyholder has opted for a plan with no room rent capping."
+  },
+  {
+    "doc_id": "KB002",
+    "category": "coverage",
+    "title": "Pre and Post Hospitalization Expenses",
+    "content": "Medical expenses incurred up to 30 days before hospitalization and up to 60 days after discharge are covered under the policy, provided they are related to the same illness or injury for which the insured was hospitalized. This includes diagnostic tests, doctor consultations, and prescribed medicines."
+  },
+  {
+    "doc_id": "KB003",
+    "category": "coverage",
+    "title": "Day Care Procedures",
+    "content": "The policy covers medical treatments and surgeries that require less than 24 hours of hospitalization due to technological advancement, commonly known as day care procedures. This includes cataract surgery, dialysis, chemotherapy, and radiotherapy, among 140+ listed day care procedures."
+  },
+  {
+    "doc_id": "KB004",
+    "category": "coverage",
+    "title": "Ambulance Charges",
+    "content": "Road ambulance charges up to INR 2,000 per hospitalization are reimbursed when the insured is transported to a hospital for emergency treatment. Air ambulance coverage is available only under premium plans and is subject to prior authorization."
+  },
+  {
+    "doc_id": "KB005",
+    "category": "exclusions",
+    "title": "Waiting Period for Pre-Existing Diseases",
+    "content": "Any pre-existing disease disclosed at the time of proposal is covered only after a continuous waiting period of 36 months from the policy inception date. Non-disclosed pre-existing conditions discovered later may lead to claim rejection or policy cancellation."
+  },
+  {
+    "doc_id": "KB006",
+    "category": "exclusions",
+    "title": "Initial Waiting Period",
+    "content": "A waiting period of 30 days from the policy start date applies to all illnesses, except accidental injuries, which are covered from day one. Claims arising from illnesses diagnosed within the first 30 days will not be payable, except in case of accidents."
+  },
+  {
+    "doc_id": "KB007",
+    "category": "exclusions",
+    "title": "Specific Disease Waiting Period",
+    "content": "Treatment for specific conditions such as cataract, hernia, joint replacement surgery, and hysterectomy is subject to a waiting period of 24 months from policy inception, regardless of whether the condition was pre-existing."
+  },
+  {
+    "doc_id": "KB008",
+    "category": "exclusions",
+    "title": "Permanent Exclusions",
+    "content": "The policy does not cover cosmetic or plastic surgery unless necessitated by an accident, treatment for infertility, dental treatment unless requiring hospitalization due to an accident, and any treatment related to self-inflicted injury or substance abuse."
+  },
+  {
+    "doc_id": "KB009",
+    "category": "claims",
+    "title": "Cashless Claim Process",
+    "content": "For planned hospitalization, the insured must submit a pre-authorization request through the network hospital's insurance desk at least 48 hours prior to admission. For emergency hospitalization, the pre-authorization request must be submitted within 24 hours of admission. The insurer or TPA reviews and approves the request based on policy terms, and the hospital settles the bill directly with the insurer for the approved amount."
+  },
+  {
+    "doc_id": "KB010",
+    "category": "claims",
+    "title": "Reimbursement Claim Process",
+    "content": "For treatment at a non-network hospital, the insured pays the hospital bill upfront and submits a reimbursement claim within 30 days of discharge. Required documents include the claim form, original discharge summary, original bills and receipts, investigation reports, and the insured's KYC documents."
+  },
+  {
+    "doc_id": "KB011",
+    "category": "claims",
+    "title": "Claim Settlement Timeline",
+    "content": "As per regulatory guidelines, the insurer must settle or reject a claim within 30 days of receiving all required documents. If an investigation is required, it must be completed within 30 days, and the final decision must be communicated within 45 days from the receipt of the claim."
+  },
+  {
+    "doc_id": "KB012",
+    "category": "claims",
+    "title": "Claim Rejection Reasons",
+    "content": "Common reasons for claim rejection include non-disclosure of pre-existing conditions at the time of proposal, treatment taken during the waiting period, treatment for an excluded condition, incomplete documentation, and policy lapse due to non-payment of premium before the due date."
+  },
+  {
+    "doc_id": "KB013",
+    "category": "premium",
+    "title": "Premium Calculation Factors",
+    "content": "Premium amount depends on factors such as the insured's age, sum insured opted, city of residence, medical history, number of members covered under a family floater plan, and any add-on covers selected such as maternity or critical illness riders."
+  },
+  {
+    "doc_id": "KB014",
+    "category": "premium",
+    "title": "Grace Period for Renewal",
+    "content": "A grace period of 30 days is provided for renewing the policy after the expiry date. If the policy is renewed within the grace period, continuity benefits such as waiting period credit are retained. However, coverage is not available for any illness or hospitalization occurring during the lapsed period."
+  },
+  {
+    "doc_id": "KB015",
+    "category": "premium",
+    "title": "No Claim Bonus",
+    "content": "Policyholders who do not file any claim during a policy year are eligible for a No Claim Bonus, which increases the sum insured by 10% to 50% at renewal, depending on the insurer's terms, without any increase in premium. The bonus reduces by a certain percentage if a claim is made in a subsequent year."
+  },
+  {
+    "doc_id": "KB016",
+    "category": "premium",
+    "title": "Portability of Health Insurance",
+    "content": "Policyholders can port their health insurance policy to another insurer at the time of renewal without losing waiting period credits already accrued, provided a portability request is submitted at least 45 days before the renewal date, as per IRDAI portability guidelines."
+  },
+  {
+    "doc_id": "KB017",
+    "category": "riders",
+    "title": "Maternity Cover Add-on",
+    "content": "The maternity add-on cover, available on payment of additional premium, covers normal delivery and cesarean section expenses after a waiting period of 9 to 36 months depending on the plan, along with newborn baby cover for the first 90 days."
+  },
+  {
+    "doc_id": "KB018",
+    "category": "riders",
+    "title": "Critical Illness Rider",
+    "content": "The critical illness rider provides a lump sum payout upon first diagnosis of a listed critical illness such as cancer, kidney failure, or major organ transplant, subject to a survival period of 30 days after diagnosis, in addition to the base hospitalization cover."
+  },
+  {
+    "doc_id": "KB019",
+    "category": "general",
+    "title": "Network Hospitals",
+    "content": "The insurer maintains a network of over 8,000 hospitals across India where cashless treatment facility is available. The updated list of network hospitals can be checked on the insurer's website or mobile app using the pin code or city name."
+  },
+  {
+    "doc_id": "KB020",
+    "category": "general",
+    "title": "Free Look Period",
+    "content": "A free look period of 15 to 30 days is provided from the date of receipt of the policy document, during which the policyholder can review the terms and cancel the policy if not satisfied, subject to a deduction for any medical check-up cost, stamp duty, and proportionate risk premium for the period of cover."
+  }
+]
