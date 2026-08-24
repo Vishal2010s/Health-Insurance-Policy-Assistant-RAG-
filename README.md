@@ -135,34 +135,34 @@ Production use would require policy-version control, access controls, human esca
 
 ```mermaid
 flowchart TD
-    START[Start: streamlit run app.py]
-    USER[User enters a policy question]
-
-    subgraph COMPONENTS[Runtime components]
-        direction LR
-
-        subgraph RAG[RAG initialization - master_HF.py]
-            direction TB
-            KB[Policy-knowledge_base.json] --> CLEAN[Clean and create documents]
-            CLEAN --> CHUNKS[500 characters, 50 overlap]
-            CHUNKS --> EMBED[MiniLM local embeddings-Hugging Face]
-            EMBED --> STORE[FAISS vector index]
-            STORE --> CHAIN[Create top-3 RetrievalQA chain]
-        end
-
-        subgraph CHAT[Application workflow - app.py]
-            direction TB
-            QUERY[query_with_sources: user question] --> PROMPT[Retrieve top 3 clauses and build grounded prompt]
-            PROMPT --> GEMINI[Gemini answer generation]
-            GEMINI --> RESULT[Answer, sources and latency]
-            RESULT --> DISPLAY[Display response in Streamlit]
-        end
+    subgraph RAG[RAG initialization - master_HF.py]
+        direction TB
+        START[Start: streamlit run app.py] --> KB[data/knowledge_base.json]
+        KB --> CLEAN[Clean and create documents]
+        CLEAN --> CHUNKS[21 chunks: 500 characters, 50 overlap]
+        CHUNKS --> EMBED[Hugging Face MiniLM clause embeddings: 384 dimensions]
+        EMBED --> STORE[FAISS clause-vector index]
     end
 
-    START --> KB
-    USER --> QUERY
-    CHAIN --> QUERY
+    subgraph CHAT[Application workflow - app.py]
+        direction TB
+        DASHBOARD[From the Streamlit dashboard] --> USER[User enters a policy question]
+        USER --> QUERYEMBED[Convert question into a MiniLM embedding]
+        QUERYEMBED --> MATCH[Compare question vector with FAISS clause vectors]
+        MATCH --> TOP3[Retrieve the 3 most similar policy clauses]
+        TOP3 --> PROMPT[Build a grounded prompt with the retrieved clauses]
+        PROMPT --> GEMINI[Gemini answer generation]
+        GEMINI --> RESULT[Answer, sources and latency]
+        RESULT --> DISPLAY[Display response in Streamlit]
+    end
+
+    STORE -->|Vector similarity search| MATCH
+
 ```
+
+
+The left side shows one-time RAG initialization performed through master_HF.py; the start arrow now connects directly to the policy JSON. On the right, the user submits a question from the Streamlit dashboard. MiniLM converts that question into a 384-dimensional vector, FAISS compares it with the stored policy-clause vectors, and the three most similar clauses are added to the grounded Gemini prompt. Evaluation is not part of the live chatbot request path.
+
 
 ## Seven-stage RAG pipeline
 
