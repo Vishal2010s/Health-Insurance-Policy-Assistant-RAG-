@@ -1,0 +1,966 @@
+{
+  "evaluated_at_utc": "2026-08-24T07:31:57.444164+00:00",
+  "application_model": "gemini-3.5-flash-lite",
+  "evaluator_model": "gemini-3.5-flash-lite",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "embedding_api_cost_usd": 0.0,
+  "top_k": 3,
+  "test_case_count": 20,
+  "metrics": {
+    "response_accuracy": 1.0,
+    "answer_relevance": 1.0,
+    "factual_correctness": 1.0,
+    "contextual_relevance": 0.8635,
+    "average_latency_seconds": 1.473135,
+    "simulated_user_satisfaction_out_of_5": 5,
+    "ragas_faithfulness": 0.9525,
+    "strict_hallucination_rate": 0.2,
+    "material_hallucination_rate": 0.1,
+    "unsupported_claim_rate": 0.04749999999999999,
+    "average_cost_per_query_usd": 0.0004338
+  },
+  "evaluation_runtime_seconds": 453.5,
+  "cost_note": "Estimated application Gemini generation cost only. Quality-judge and RAGAS evaluation calls are excluded. Hugging Face embeddings run locally and have no embedding API charge.",
+  "results": [
+    {
+      "question": "What expenses are covered during hospitalization?",
+      "expected_doc_ids": [
+        "KB001"
+      ],
+      "answer": "According to the Hospitalization Coverage clause, the policy covers in-patient hospitalization expenses for a minimum continuous period of 24 hours. These covered expenses include:\n\n* Room rent (capped at 1% of the sum insured per day, unless the policyholder has opted for a plan with no room rent capping)\n* Nursing charges\n* Doctor's fees\n* ICU charges (capped at 2% of the sum insured per day, unless the policyholder has opted for a plan with no room rent capping)\n* Cost of medicines and consumables used during the hospital stay",
+      "retrieved_doc_ids": [
+        "KB002",
+        "KB001",
+        "KB010"
+      ],
+      "sources": [
+        {
+          "doc_id": "KB002",
+          "category": "coverage",
+          "title": "Pre and Post Hospitalization Expenses",
+          "chunk_id": "chunk_2",
+          "content": "Pre and Post Hospitalization Expenses\n\nMedical expenses incurred up to 30 days before hospitalization and up to 60 days after discharge are covered under the policy, provided they are related to the same illness or injury for which the insured was hospitalized. This includes diagnostic tests, doctor consultations, and prescribed medicines."
+        },
+        {
+          "doc_id": "KB001",
+          "category": "coverage",
+          "title": "Hospitalization Coverage",
+          "chunk_id": "chunk_1",
+          "content": "Hospitalization Coverage\n\nThe policy covers in-patient hospitalization expenses for a minimum continuous period of 24 hours, including room rent, nursing charges, doctor's fees, ICU charges, and cost of medicines and consumables used during the hospital stay. Room rent is capped at 1% of the sum insured per day, and ICU charges are capped at 2% of the sum insured per day, unless the policyholder has opted for a plan with no room rent capping."
+        },
+        {
+          "doc_id": "KB010",
+          "category": "claims",
+          "title": "Reimbursement Claim Process",
+          "chunk_id": "chunk_11",
+          "content": "Reimbursement Claim Process\n\nFor treatment at a non-network hospital, the insured pays the hospital bill upfront and submits a reimbursement claim within 30 days of discharge. Required documents include the claim form, original discharge summary, original bills and receipts, investigation reports, and the insured's KYC documents."
+        }
+      ],
+      "answer_relevance": 1.0,
+      "factual_correctness": 1.0,
+      "response_accuracy": 1.0,
+      "contextual_relevance": 0.67,
+      "simulated_user_satisfaction": 5,
+      "latency_seconds": 1.5954,
+      "ragas_faithfulness": 1.0,
+      "hallucination_detected": false,
+      "estimated_input_tokens": 624,
+      "estimated_output_tokens": 134,
+      "embedding_api_cost_usd": 0.0,
+      "estimated_cost_usd": 0.0005222
+    },
+    {
+      "question": "Are pre and post hospitalization expenses covered?",
+      "expected_doc_ids": [
+        "KB002"
+      ],
+      "answer": "According to the Pre and Post Hospitalization Expenses clause, yes, pre and post-hospitalization expenses are covered. \n\nHere are the details of the coverage:\n* **Pre-hospitalization:** Medical expenses incurred up to **30 days before hospitalization** are covered.\n* **Post-hospitalization:** Medical expenses incurred up to **60 days after discharge** are covered.\n* **Condition:** These expenses must be related to the same illness or injury for which you were hospitalized.\n* **What is included:** This covers diagnostic tests, doctor consultations, and prescribed medicines. \n\n*Please note: I cannot guarantee claim approval, coverage, or reimbursement.*",
+      "retrieved_doc_ids": [
+        "KB002",
+        "KB001",
+        "KB017"
+      ],
+      "sources": [
+        {
+          "doc_id": "KB002",
+          "category": "coverage",
+          "title": "Pre and Post Hospitalization Expenses",
+          "chunk_id": "chunk_2",
+          "content": "Pre and Post Hospitalization Expenses\n\nMedical expenses incurred up to 30 days before hospitalization and up to 60 days after discharge are covered under the policy, provided they are related to the same illness or injury for which the insured was hospitalized. This includes diagnostic tests, doctor consultations, and prescribed medicines."
+        },
+        {
+          "doc_id": "KB001",
+          "category": "coverage",
+          "title": "Hospitalization Coverage",
+          "chunk_id": "chunk_1",
+          "content": "Hospitalization Coverage\n\nThe policy covers in-patient hospitalization expenses for a minimum continuous period of 24 hours, including room rent, nursing charges, doctor's fees, ICU charges, and cost of medicines and consumables used during the hospital stay. Room rent is capped at 1% of the sum insured per day, and ICU charges are capped at 2% of the sum insured per day, unless the policyholder has opted for a plan with no room rent capping."
+        },
+        {
+          "doc_id": "KB017",
+          "category": "riders",
+          "title": "Maternity Cover Add-on",
+          "chunk_id": "chunk_18",
+          "content": "Maternity Cover Add-on\n\nThe maternity add-on cover, available on payment of additional premium, covers normal delivery and cesarean section expenses after a waiting period of 9 to 36 months depending on the plan, along with newborn baby cover for the first 90 days."
+        }
+      ],
+      "answer_relevance": 1.0,
+      "factual_correctness": 1.0,
+      "response_accuracy": 1.0,
+      "contextual_relevance": 1.0,
+      "simulated_user_satisfaction": 5,
+      "latency_seconds": 1.4825,
+      "ragas_faithfulness": 0.8333333333333334,
+      "hallucination_detected": true,
+      "estimated_input_tokens": 608,
+      "estimated_output_tokens": 165,
+      "embedding_api_cost_usd": 0.0,
+      "estimated_cost_usd": 0.0005949
+    },
+    {
+      "question": "Which day care procedures are covered?",
+      "expected_doc_ids": [
+        "KB003"
+      ],
+      "answer": "According to the Day Care Procedures clause, the policy covers medical treatments and surgeries that require less than 24 hours of hospitalization due to technological advancement (commonly known as day care procedures). Specifically, this includes:\n\n* Cataract surgery\n* Dialysis\n* Chemotherapy\n* Radiotherapy\n* Among 140+ listed day care procedures.",
+      "retrieved_doc_ids": [
+        "KB003",
+        "KB008",
+        "KB001"
+      ],
+      "sources": [
+        {
+          "doc_id": "KB003",
+          "category": "coverage",
+          "title": "Day Care Procedures",
+          "chunk_id": "chunk_3",
+          "content": "Day Care Procedures\n\nThe policy covers medical treatments and surgeries that require less than 24 hours of hospitalization due to technological advancement, commonly known as day care procedures. This includes cataract surgery, dialysis, chemotherapy, and radiotherapy, among 140+ listed day care procedures."
+        },
+        {
+          "doc_id": "KB008",
+          "category": "exclusions",
+          "title": "Permanent Exclusions",
+          "chunk_id": "chunk_8",
+          "content": "Permanent Exclusions\n\nThe policy does not cover cosmetic or plastic surgery unless necessitated by an accident, treatment for infertility, dental treatment unless requiring hospitalization due to an accident, and any treatment related to self-inflicted injury or substance abuse."
+        },
+        {
+          "doc_id": "KB001",
+          "category": "coverage",
+          "title": "Hospitalization Coverage",
+          "chunk_id": "chunk_1",
+          "content": "Hospitalization Coverage\n\nThe policy covers in-patient hospitalization expenses for a minimum continuous period of 24 hours, including room rent, nursing charges, doctor's fees, ICU charges, and cost of medicines and consumables used during the hospital stay. Room rent is capped at 1% of the sum insured per day, and ICU charges are capped at 2% of the sum insured per day, unless the policyholder has opted for a plan with no room rent capping."
+        }
+      ],
+      "answer_relevance": 1.0,
+      "factual_correctness": 1.0,
+      "response_accuracy": 1.0,
+      "contextual_relevance": 1.0,
+      "simulated_user_satisfaction": 5,
+      "latency_seconds": 1.1861,
+      "ragas_faithfulness": 1.0,
+      "hallucination_detected": false,
+      "estimated_input_tokens": 600,
+      "estimated_output_tokens": 88,
+      "embedding_api_cost_usd": 0.0,
+      "estimated_cost_usd": 0.0004
+    },
+    {
+      "question": "Is ambulance charge covered?",
+      "expected_doc_ids": [
+        "KB004"
+      ],
+      "answer": "According to the Ambulance Charges clause, ambulance charges are covered with the following conditions:\n\n* **Road Ambulance:** Charges up to INR 2,000 per hospitalization are reimbursed when you are transported to a hospital for emergency treatment.\n* **Air Ambulance:** Coverage is available only under premium plans and is subject to prior authorization.\n\n*Please note that I cannot guarantee claim approval, coverage, or reimbursement.*",
+      "retrieved_doc_ids": [
+        "KB004",
+        "KB002",
+        "KB001"
+      ],
+      "sources": [
+        {
+          "doc_id": "KB004",
+          "category": "coverage",
+          "title": "Ambulance Charges",
+          "chunk_id": "chunk_4",
+          "content": "Ambulance Charges\n\nRoad ambulance charges up to INR 2,000 per hospitalization are reimbursed when the insured is transported to a hospital for emergency treatment. Air ambulance coverage is available only under premium plans and is subject to prior authorization."
+        },
+        {
+          "doc_id": "KB002",
+          "category": "coverage",
+          "title": "Pre and Post Hospitalization Expenses",
+          "chunk_id": "chunk_2",
+          "content": "Pre and Post Hospitalization Expenses\n\nMedical expenses incurred up to 30 days before hospitalization and up to 60 days after discharge are covered under the policy, provided they are related to the same illness or injury for which the insured was hospitalized. This includes diagnostic tests, doctor consultations, and prescribed medicines."
+        },
+        {
+          "doc_id": "KB001",
+          "category": "coverage",
+          "title": "Hospitalization Coverage",
+          "chunk_id": "chunk_1",
+          "content": "Hospitalization Coverage\n\nThe policy covers in-patient hospitalization expenses for a minimum continuous period of 24 hours, including room rent, nursing charges, doctor's fees, ICU charges, and cost of medicines and consumables used during the hospital stay. Room rent is capped at 1% of the sum insured per day, and ICU charges are capped at 2% of the sum insured per day, unless the policyholder has opted for a plan with no room rent capping."
+        }
+      ],
+      "answer_relevance": 1.0,
+      "factual_correctness": 1.0,
+      "response_accuracy": 1.0,
+      "contextual_relevance": 1.0,
+      "simulated_user_satisfaction": 5,
+      "latency_seconds": 3.6733,
+      "ragas_faithfulness": 0.75,
+      "hallucination_detected": true,
+      "estimated_input_tokens": 602,
+      "estimated_output_tokens": 110,
+      "embedding_api_cost_usd": 0.0,
+      "estimated_cost_usd": 0.0004556
+    },
+    {
+      "question": "What is the waiting period for pre-existing diseases?",
+      "expected_doc_ids": [
+        "KB005"
+      ],
+      "answer": "According to the Waiting Period for Pre-Existing Diseases clause, any pre-existing disease disclosed at the time of proposal is covered only after a continuous waiting period of 36 months from the policy inception date. Additionally, please note that non-disclosed pre-existing conditions discovered later may lead to claim rejection or policy cancellation. \n\nPlease note: I cannot guarantee claim approval, coverage, or reimbursement.",
+      "retrieved_doc_ids": [
+        "KB005",
+        "KB007",
+        "KB006"
+      ],
+      "sources": [
+        {
+          "doc_id": "KB005",
+          "category": "exclusions",
+          "title": "Waiting Period for Pre-Existing Diseases",
+          "chunk_id": "chunk_5",
+          "content": "Waiting Period for Pre-Existing Diseases\n\nAny pre-existing disease disclosed at the time of proposal is covered only after a continuous waiting period of 36 months from the policy inception date. Non-disclosed pre-existing conditions discovered later may lead to claim rejection or policy cancellation."
+        },
+        {
+          "doc_id": "KB007",
+          "category": "exclusions",
+          "title": "Specific Disease Waiting Period",
+          "chunk_id": "chunk_7",
+          "content": "Specific Disease Waiting Period\n\nTreatment for specific conditions such as cataract, hernia, joint replacement surgery, and hysterectomy is subject to a waiting period of 24 months from policy inception, regardless of whether the condition was pre-existing."
+        },
+        {
+          "doc_id": "KB006",
+          "category": "exclusions",
+          "title": "Initial Waiting Period",
+          "chunk_id": "chunk_6",
+          "content": "Initial Waiting Period\n\nA waiting period of 30 days from the policy start date applies to all illnesses, except accidental injuries, which are covered from day one. Claims arising from illnesses diagnosed within the first 30 days will not be payable, except in case of accidents."
+        }
+      ],
+      "answer_relevance": 1.0,
+      "factual_correctness": 1.0,
+      "response_accuracy": 1.0,
+      "contextual_relevance": 1.0,
+      "simulated_user_satisfaction": 5,
+      "latency_seconds": 0.9197,
+      "ragas_faithfulness": 0.6666666666666666,
+      "hallucination_detected": true,
+      "estimated_input_tokens": 555,
+      "estimated_output_tokens": 109,
+      "embedding_api_cost_usd": 0.0,
+      "estimated_cost_usd": 0.000439
+    },
+    {
+      "question": "Is there an initial waiting period?",
+      "expected_doc_ids": [
+        "KB006"
+      ],
+      "answer": "According to the Initial Waiting Period clause:\n\n* Yes, there is an initial waiting period of **30 days** from the policy start date that applies to all illnesses, except for accidental injuries, which are covered from day one.\n* Claims arising from illnesses diagnosed within the first 30 days will not be payable, except in the case of accidents.",
+      "retrieved_doc_ids": [
+        "KB007",
+        "KB005",
+        "KB006"
+      ],
+      "sources": [
+        {
+          "doc_id": "KB007",
+          "category": "exclusions",
+          "title": "Specific Disease Waiting Period",
+          "chunk_id": "chunk_7",
+          "content": "Specific Disease Waiting Period\n\nTreatment for specific conditions such as cataract, hernia, joint replacement surgery, and hysterectomy is subject to a waiting period of 24 months from policy inception, regardless of whether the condition was pre-existing."
+        },
+        {
+          "doc_id": "KB005",
+          "category": "exclusions",
+          "title": "Waiting Period for Pre-Existing Diseases",
+          "chunk_id": "chunk_5",
+          "content": "Waiting Period for Pre-Existing Diseases\n\nAny pre-existing disease disclosed at the time of proposal is covered only after a continuous waiting period of 36 months from the policy inception date. Non-disclosed pre-existing conditions discovered later may lead to claim rejection or policy cancellation."
+        },
+        {
+          "doc_id": "KB006",
+          "category": "exclusions",
+          "title": "Initial Waiting Period",
+          "chunk_id": "chunk_6",
+          "content": "Initial Waiting Period\n\nA waiting period of 30 days from the policy start date applies to all illnesses, except accidental injuries, which are covered from day one. Claims arising from illnesses diagnosed within the first 30 days will not be payable, except in case of accidents."
+        }
+      ],
+      "answer_relevance": 1.0,
+      "factual_correctness": 1.0,
+      "response_accuracy": 1.0,
+      "contextual_relevance": 1.0,
+      "simulated_user_satisfaction": 5,
+      "latency_seconds": 2.8151,
+      "ragas_faithfulness": 1.0,
+      "hallucination_detected": false,
+      "estimated_input_tokens": 550,
+      "estimated_output_tokens": 87,
+      "embedding_api_cost_usd": 0.0,
+      "estimated_cost_usd": 0.0003825
+    },
+    {
+      "question": "What is the waiting period for cataract or hernia?",
+      "expected_doc_ids": [
+        "KB007"
+      ],
+      "answer": "According to the Specific Disease Waiting Period clause, treatment for cataract and hernia is subject to a waiting period of **24 months** from policy inception, regardless of whether the condition was pre-existing. \n\n*(Note: I cannot guarantee claim approval, coverage, or reimbursement.)*",
+      "retrieved_doc_ids": [
+        "KB007",
+        "KB006",
+        "KB003"
+      ],
+      "sources": [
+        {
+          "doc_id": "KB007",
+          "category": "exclusions",
+          "title": "Specific Disease Waiting Period",
+          "chunk_id": "chunk_7",
+          "content": "Specific Disease Waiting Period\n\nTreatment for specific conditions such as cataract, hernia, joint replacement surgery, and hysterectomy is subject to a waiting period of 24 months from policy inception, regardless of whether the condition was pre-existing."
+        },
+        {
+          "doc_id": "KB006",
+          "category": "exclusions",
+          "title": "Initial Waiting Period",
+          "chunk_id": "chunk_6",
+          "content": "Initial Waiting Period\n\nA waiting period of 30 days from the policy start date applies to all illnesses, except accidental injuries, which are covered from day one. Claims arising from illnesses diagnosed within the first 30 days will not be payable, except in case of accidents."
+        },
+        {
+          "doc_id": "KB003",
+          "category": "coverage",
+          "title": "Day Care Procedures",
+          "chunk_id": "chunk_3",
+          "content": "Day Care Procedures\n\nThe policy covers medical treatments and surgeries that require less than 24 hours of hospitalization due to technological advancement, commonly known as day care procedures. This includes cataract surgery, dialysis, chemotherapy, and radiotherapy, among 140+ listed day care procedures."
+        }
+      ],
+      "answer_relevance": 1.0,
+      "factual_correctness": 1.0,
+      "response_accuracy": 1.0,
+      "contextual_relevance": 1.0,
+      "simulated_user_satisfaction": 5,
+      "latency_seconds": 1.0163,
+      "ragas_faithfulness": 1.0,
+      "hallucination_detected": false,
+      "estimated_input_tokens": 556,
+      "estimated_output_tokens": 72,
+      "embedding_api_cost_usd": 0.0,
+      "estimated_cost_usd": 0.00034679999999999997
+    },
+    {
+      "question": "Which treatments are permanently excluded?",
+      "expected_doc_ids": [
+        "KB008"
+      ],
+      "answer": "According to the Permanent Exclusions clause, the policy does not cover:\n\n* Cosmetic or plastic surgery (unless necessitated by an accident)\n* Treatment for infertility\n* Dental treatment (unless requiring hospitalization due to an accident)\n* Any treatment related to self-inflicted injury or substance abuse",
+      "retrieved_doc_ids": [
+        "KB008",
+        "KB005",
+        "KB007"
+      ],
+      "sources": [
+        {
+          "doc_id": "KB008",
+          "category": "exclusions",
+          "title": "Permanent Exclusions",
+          "chunk_id": "chunk_8",
+          "content": "Permanent Exclusions\n\nThe policy does not cover cosmetic or plastic surgery unless necessitated by an accident, treatment for infertility, dental treatment unless requiring hospitalization due to an accident, and any treatment related to self-inflicted injury or substance abuse."
+        },
+        {
+          "doc_id": "KB005",
+          "category": "exclusions",
+          "title": "Waiting Period for Pre-Existing Diseases",
+          "chunk_id": "chunk_5",
+          "content": "Waiting Period for Pre-Existing Diseases\n\nAny pre-existing disease disclosed at the time of proposal is covered only after a continuous waiting period of 36 months from the policy inception date. Non-disclosed pre-existing conditions discovered later may lead to claim rejection or policy cancellation."
+        },
+        {
+          "doc_id": "KB007",
+          "category": "exclusions",
+          "title": "Specific Disease Waiting Period",
+          "chunk_id": "chunk_7",
+          "content": "Specific Disease Waiting Period\n\nTreatment for specific conditions such as cataract, hernia, joint replacement surgery, and hysterectomy is subject to a waiting period of 24 months from policy inception, regardless of whether the condition was pre-existing."
+        }
+      ],
+      "answer_relevance": 1.0,
+      "factual_correctness": 1.0,
+      "response_accuracy": 1.0,
+      "contextual_relevance": 0.33,
+      "simulated_user_satisfaction": 5,
+      "latency_seconds": 0.9029,
+      "ragas_faithfulness": 1.0,
+      "hallucination_detected": false,
+      "estimated_input_tokens": 552,
+      "estimated_output_tokens": 77,
+      "embedding_api_cost_usd": 0.0,
+      "estimated_cost_usd": 0.00035810000000000003
+    },
+    {
+      "question": "How do I file a cashless claim?",
+      "expected_doc_ids": [
+        "KB009"
+      ],
+      "answer": "According to the **Cashless Claim Process** clause, here are the steps to file a cashless claim:\n\n* **For planned hospitalization:** Submit a pre-authorization request through the network hospital's insurance desk at least 48 hours before admission.\n* **For emergency hospitalization:** Submit the pre-authorization request within 24 hours of admission.\n\nAfter submission, the insurer or TPA will review and approve the request based on policy terms, and the hospital will settle the bill directly with the insurer for the approved amount. \n\n*Please note: I cannot guarantee claim approval or coverage.*",
+      "retrieved_doc_ids": [
+        "KB009",
+        "KB010",
+        "KB015"
+      ],
+      "sources": [
+        {
+          "doc_id": "KB009",
+          "category": "claims",
+          "title": "Cashless Claim Process",
+          "chunk_id": "chunk_9",
+          "content": "Cashless Claim Process\n\nFor planned hospitalization, the insured must submit a pre-authorization request through the network hospital's insurance desk at least 48 hours prior to admission. For emergency hospitalization, the pre-authorization request must be submitted within 24 hours of admission. The insurer or TPA reviews and approves the request based on policy terms, and the hospital settles the bill directly with the insurer for the approved amount."
+        },
+        {
+          "doc_id": "KB010",
+          "category": "claims",
+          "title": "Reimbursement Claim Process",
+          "chunk_id": "chunk_11",
+          "content": "Reimbursement Claim Process\n\nFor treatment at a non-network hospital, the insured pays the hospital bill upfront and submits a reimbursement claim within 30 days of discharge. Required documents include the claim form, original discharge summary, original bills and receipts, investigation reports, and the insured's KYC documents."
+        },
+        {
+          "doc_id": "KB015",
+          "category": "premium",
+          "title": "No Claim Bonus",
+          "chunk_id": "chunk_16",
+          "content": "No Claim Bonus\n\nPolicyholders who do not file any claim during a policy year are eligible for a No Claim Bonus, which increases the sum insured by 10% to 50% at renewal, depending on the insurer's terms, without any increase in premium. The bonus reduces by a certain percentage if a claim is made in a subsequent year."
+        }
+      ],
+      "answer_relevance": 1.0,
+      "factual_correctness": 1.0,
+      "response_accuracy": 1.0,
+      "contextual_relevance": 1.0,
+      "simulated_user_satisfaction": 5,
+      "latency_seconds": 1.5199,
+      "ragas_faithfulness": 0.8,
+      "hallucination_detected": true,
+      "estimated_input_tokens": 617,
+      "estimated_output_tokens": 151,
+      "embedding_api_cost_usd": 0.0,
+      "estimated_cost_usd": 0.0005626
+    },
+    {
+      "question": "How do I file a reimbursement claim?",
+      "expected_doc_ids": [
+        "KB010"
+      ],
+      "answer": "To file a reimbursement claim for treatment at a non-network hospital, please follow these steps in order:\n\n1. **Pay upfront:** Pay the hospital bill upfront.\n2. **Submit the claim:** Submit your reimbursement claim within **30 days** of discharge.\n3. **Provide required documents:** Include the following required documents with your submission:\n   * Claim form\n   * Original discharge summary\n   * Original bills and receipts\n   * Investigation reports\n   * The insured's KYC documents\n\n*(Note: Please be aware that I cannot guarantee claim approval, coverage, or reimbursement.)*",
+      "retrieved_doc_ids": [
+        "KB010",
+        "KB011",
+        "KB009"
+      ],
+      "sources": [
+        {
+          "doc_id": "KB010",
+          "category": "claims",
+          "title": "Reimbursement Claim Process",
+          "chunk_id": "chunk_11",
+          "content": "Reimbursement Claim Process\n\nFor treatment at a non-network hospital, the insured pays the hospital bill upfront and submits a reimbursement claim within 30 days of discharge. Required documents include the claim form, original discharge summary, original bills and receipts, investigation reports, and the insured's KYC documents."
+        },
+        {
+          "doc_id": "KB011",
+          "category": "claims",
+          "title": "Claim Settlement Timeline",
+          "chunk_id": "chunk_12",
+          "content": "Claim Settlement Timeline\n\nAs per regulatory guidelines, the insurer must settle or reject a claim within 30 days of receiving all required documents. If an investigation is required, it must be completed within 30 days, and the final decision must be communicated within 45 days from the receipt of the claim."
+        },
+        {
+          "doc_id": "KB009",
+          "category": "claims",
+          "title": "Cashless Claim Process",
+          "chunk_id": "chunk_9",
+          "content": "Cashless Claim Process\n\nFor planned hospitalization, the insured must submit a pre-authorization request through the network hospital's insurance desk at least 48 hours prior to admission. For emergency hospitalization, the pre-authorization request must be submitted within 24 hours of admission. The insurer or TPA reviews and approves the request based on policy terms, and the hospital settles the bill directly with the insurer for the approved amount."
+        }
+      ],
+      "answer_relevance": 1.0,
+      "factual_correctness": 1.0,
+      "response_accuracy": 1.0,
+      "contextual_relevance": 1.0,
+      "simulated_user_satisfaction": 5,
+      "latency_seconds": 1.004,
+      "ragas_faithfulness": 1.0,
+      "hallucination_detected": false,
+      "estimated_input_tokens": 616,
+      "estimated_output_tokens": 146,
+      "embedding_api_cost_usd": 0.0,
+      "estimated_cost_usd": 0.0005497999999999999
+    },
+    {
+      "question": "How long does claim settlement take?",
+      "expected_doc_ids": [
+        "KB011"
+      ],
+      "answer": "According to the Claim Settlement Timeline clause, the insurer must settle or reject a claim within 30 days of receiving all required documents. If an investigation is required, it must be completed within 30 days, and the final decision must be communicated within 45 days from the receipt of the claim.",
+      "retrieved_doc_ids": [
+        "KB011",
+        "KB006",
+        "KB010"
+      ],
+      "sources": [
+        {
+          "doc_id": "KB011",
+          "category": "claims",
+          "title": "Claim Settlement Timeline",
+          "chunk_id": "chunk_12",
+          "content": "Claim Settlement Timeline\n\nAs per regulatory guidelines, the insurer must settle or reject a claim within 30 days of receiving all required documents. If an investigation is required, it must be completed within 30 days, and the final decision must be communicated within 45 days from the receipt of the claim."
+        },
+        {
+          "doc_id": "KB006",
+          "category": "exclusions",
+          "title": "Initial Waiting Period",
+          "chunk_id": "chunk_6",
+          "content": "Initial Waiting Period\n\nA waiting period of 30 days from the policy start date applies to all illnesses, except accidental injuries, which are covered from day one. Claims arising from illnesses diagnosed within the first 30 days will not be payable, except in case of accidents."
+        },
+        {
+          "doc_id": "KB010",
+          "category": "claims",
+          "title": "Reimbursement Claim Process",
+          "chunk_id": "chunk_11",
+          "content": "Reimbursement Claim Process\n\nFor treatment at a non-network hospital, the insured pays the hospital bill upfront and submits a reimbursement claim within 30 days of discharge. Required documents include the claim form, original discharge summary, original bills and receipts, investigation reports, and the insured's KYC documents."
+        }
+      ],
+      "answer_relevance": 1.0,
+      "factual_correctness": 1.0,
+      "response_accuracy": 1.0,
+      "contextual_relevance": 0.67,
+      "simulated_user_satisfaction": 5,
+      "latency_seconds": 0.9278,
+      "ragas_faithfulness": 1.0,
+      "hallucination_detected": false,
+      "estimated_input_tokens": 571,
+      "estimated_output_tokens": 76,
+      "embedding_api_cost_usd": 0.0,
+      "estimated_cost_usd": 0.00036129999999999995
+    },
+    {
+      "question": "What are common reasons for claim rejection?",
+      "expected_doc_ids": [
+        "KB012"
+      ],
+      "answer": "According to the Claim Rejection Reasons clause, common reasons for claim rejection include:\n\n* Non-disclosure of pre-existing conditions at the time of proposal\n* Treatment taken during the waiting period\n* Treatment for an excluded condition\n* Incomplete documentation\n* Policy lapse due to non-payment of premium before the due date\n\nAdditionally, according to the Waiting Period for Pre-Existing Diseases clause, non-disclosed pre-existing conditions discovered later may also lead to claim rejection or policy cancellation.",
+      "retrieved_doc_ids": [
+        "KB012",
+        "KB011",
+        "KB005"
+      ],
+      "sources": [
+        {
+          "doc_id": "KB012",
+          "category": "claims",
+          "title": "Claim Rejection Reasons",
+          "chunk_id": "chunk_13",
+          "content": "Claim Rejection Reasons\n\nCommon reasons for claim rejection include non-disclosure of pre-existing conditions at the time of proposal, treatment taken during the waiting period, treatment for an excluded condition, incomplete documentation, and policy lapse due to non-payment of premium before the due date."
+        },
+        {
+          "doc_id": "KB011",
+          "category": "claims",
+          "title": "Claim Settlement Timeline",
+          "chunk_id": "chunk_12",
+          "content": "Claim Settlement Timeline\n\nAs per regulatory guidelines, the insurer must settle or reject a claim within 30 days of receiving all required documents. If an investigation is required, it must be completed within 30 days, and the final decision must be communicated within 45 days from the receipt of the claim."
+        },
+        {
+          "doc_id": "KB005",
+          "category": "exclusions",
+          "title": "Waiting Period for Pre-Existing Diseases",
+          "chunk_id": "chunk_5",
+          "content": "Waiting Period for Pre-Existing Diseases\n\nAny pre-existing disease disclosed at the time of proposal is covered only after a continuous waiting period of 36 months from the policy inception date. Non-disclosed pre-existing conditions discovered later may lead to claim rejection or policy cancellation."
+        }
+      ],
+      "answer_relevance": 1.0,
+      "factual_correctness": 1.0,
+      "response_accuracy": 1.0,
+      "contextual_relevance": 0.8,
+      "simulated_user_satisfaction": 5,
+      "latency_seconds": 1.1213,
+      "ragas_faithfulness": 1.0,
+      "hallucination_detected": false,
+      "estimated_input_tokens": 573,
+      "estimated_output_tokens": 132,
+      "embedding_api_cost_usd": 0.0,
+      "estimated_cost_usd": 0.0005019
+    },
+    {
+      "question": "How is the premium calculated?",
+      "expected_doc_ids": [
+        "KB013"
+      ],
+      "answer": "According to the Premium Calculation Factors clause, the premium amount depends on the following factors:\n\n* The insured's age\n* Sum insured opted\n* City of residence\n* Medical history\n* Number of members covered under a family floater plan\n* Any add-on covers selected, such as maternity or critical illness riders",
+      "retrieved_doc_ids": [
+        "KB013",
+        "KB015",
+        "KB001"
+      ],
+      "sources": [
+        {
+          "doc_id": "KB013",
+          "category": "premium",
+          "title": "Premium Calculation Factors",
+          "chunk_id": "chunk_14",
+          "content": "Premium Calculation Factors\n\nPremium amount depends on factors such as the insured's age, sum insured opted, city of residence, medical history, number of members covered under a family floater plan, and any add-on covers selected such as maternity or critical illness riders."
+        },
+        {
+          "doc_id": "KB015",
+          "category": "premium",
+          "title": "No Claim Bonus",
+          "chunk_id": "chunk_16",
+          "content": "No Claim Bonus\n\nPolicyholders who do not file any claim during a policy year are eligible for a No Claim Bonus, which increases the sum insured by 10% to 50% at renewal, depending on the insurer's terms, without any increase in premium. The bonus reduces by a certain percentage if a claim is made in a subsequent year."
+        },
+        {
+          "doc_id": "KB001",
+          "category": "coverage",
+          "title": "Hospitalization Coverage",
+          "chunk_id": "chunk_1",
+          "content": "Hospitalization Coverage\n\nThe policy covers in-patient hospitalization expenses for a minimum continuous period of 24 hours, including room rent, nursing charges, doctor's fees, ICU charges, and cost of medicines and consumables used during the hospital stay. Room rent is capped at 1% of the sum insured per day, and ICU charges are capped at 2% of the sum insured per day, unless the policyholder has opted for a plan with no room rent capping."
+        }
+      ],
+      "answer_relevance": 1.0,
+      "factual_correctness": 1.0,
+      "response_accuracy": 1.0,
+      "contextual_relevance": 1.0,
+      "simulated_user_satisfaction": 5,
+      "latency_seconds": 0.934,
+      "ragas_faithfulness": 1.0,
+      "hallucination_detected": false,
+      "estimated_input_tokens": 600,
+      "estimated_output_tokens": 79,
+      "embedding_api_cost_usd": 0.0,
+      "estimated_cost_usd": 0.0003775
+    },
+    {
+      "question": "What is the grace period for renewal?",
+      "expected_doc_ids": [
+        "KB014"
+      ],
+      "answer": "According to the Grace Period for Renewal clause, a grace period of 30 days is provided for renewing the policy after the expiry date. \n\nHere are the important conditions related to the grace period:\n* If the policy is renewed within the grace period, continuity benefits (such as waiting period credit) are retained.\n* Coverage is not available for any illness or hospitalization occurring during the lapsed period.",
+      "retrieved_doc_ids": [
+        "KB014",
+        "KB016",
+        "KB020"
+      ],
+      "sources": [
+        {
+          "doc_id": "KB014",
+          "category": "premium",
+          "title": "Grace Period for Renewal",
+          "chunk_id": "chunk_15",
+          "content": "Grace Period for Renewal\n\nA grace period of 30 days is provided for renewing the policy after the expiry date. If the policy is renewed within the grace period, continuity benefits such as waiting period credit are retained. However, coverage is not available for any illness or hospitalization occurring during the lapsed period."
+        },
+        {
+          "doc_id": "KB016",
+          "category": "premium",
+          "title": "Portability of Health Insurance",
+          "chunk_id": "chunk_17",
+          "content": "Portability of Health Insurance\n\nPolicyholders can port their health insurance policy to another insurer at the time of renewal without losing waiting period credits already accrued, provided a portability request is submitted at least 45 days before the renewal date, as per IRDAI portability guidelines."
+        },
+        {
+          "doc_id": "KB020",
+          "category": "general",
+          "title": "Free Look Period",
+          "chunk_id": "chunk_21",
+          "content": "Free Look Period\n\nA free look period of 15 to 30 days is provided from the date of receipt of the policy document, during which the policyholder can review the terms and cancel the policy if not satisfied, subject to a deduction for any medical check-up cost, stamp duty, and proportionate risk premium for the period of cover."
+        }
+      ],
+      "answer_relevance": 1.0,
+      "factual_correctness": 1.0,
+      "response_accuracy": 1.0,
+      "contextual_relevance": 1.0,
+      "simulated_user_satisfaction": 5,
+      "latency_seconds": 1.0686,
+      "ragas_faithfulness": 1.0,
+      "hallucination_detected": false,
+      "estimated_input_tokens": 582,
+      "estimated_output_tokens": 104,
+      "embedding_api_cost_usd": 0.0,
+      "estimated_cost_usd": 0.00043460000000000005
+    },
+    {
+      "question": "What is the No Claim Bonus?",
+      "expected_doc_ids": [
+        "KB015"
+      ],
+      "answer": "According to the No Claim Bonus clause, the No Claim Bonus is a benefit for policyholders who do not file any claim during a policy year. \n\n* It increases the sum insured by 10% to 50% at renewal, depending on the insurer's terms.\n* This increase happens without any increase in the premium.\n* The bonus reduces by a certain percentage if a claim is made in a subsequent year.",
+      "retrieved_doc_ids": [
+        "KB015",
+        "KB012",
+        "KB010"
+      ],
+      "sources": [
+        {
+          "doc_id": "KB015",
+          "category": "premium",
+          "title": "No Claim Bonus",
+          "chunk_id": "chunk_16",
+          "content": "No Claim Bonus\n\nPolicyholders who do not file any claim during a policy year are eligible for a No Claim Bonus, which increases the sum insured by 10% to 50% at renewal, depending on the insurer's terms, without any increase in premium. The bonus reduces by a certain percentage if a claim is made in a subsequent year."
+        },
+        {
+          "doc_id": "KB012",
+          "category": "claims",
+          "title": "Claim Rejection Reasons",
+          "chunk_id": "chunk_13",
+          "content": "Claim Rejection Reasons\n\nCommon reasons for claim rejection include non-disclosure of pre-existing conditions at the time of proposal, treatment taken during the waiting period, treatment for an excluded condition, incomplete documentation, and policy lapse due to non-payment of premium before the due date."
+        },
+        {
+          "doc_id": "KB010",
+          "category": "claims",
+          "title": "Reimbursement Claim Process",
+          "chunk_id": "chunk_11",
+          "content": "Reimbursement Claim Process\n\nFor treatment at a non-network hospital, the insured pays the hospital bill upfront and submits a reimbursement claim within 30 days of discharge. Required documents include the claim form, original discharge summary, original bills and receipts, investigation reports, and the insured's KYC documents."
+        }
+      ],
+      "answer_relevance": 1.0,
+      "factual_correctness": 1.0,
+      "response_accuracy": 1.0,
+      "contextual_relevance": 1.0,
+      "simulated_user_satisfaction": 5,
+      "latency_seconds": 3.6655,
+      "ragas_faithfulness": 1.0,
+      "hallucination_detected": false,
+      "estimated_input_tokens": 578,
+      "estimated_output_tokens": 94,
+      "embedding_api_cost_usd": 0.0,
+      "estimated_cost_usd": 0.00040839999999999995
+    },
+    {
+      "question": "Can I port the policy to another insurer?",
+      "expected_doc_ids": [
+        "KB016"
+      ],
+      "answer": "Yes, you can port your health insurance policy to another insurer at the time of renewal without losing waiting period credits already accrued, provided a portability request is submitted at least 45 days before the renewal date, as per IRDAI portability guidelines (According to the Portability of Health Insurance clause).",
+      "retrieved_doc_ids": [
+        "KB016",
+        "KB006",
+        "KB008"
+      ],
+      "sources": [
+        {
+          "doc_id": "KB016",
+          "category": "premium",
+          "title": "Portability of Health Insurance",
+          "chunk_id": "chunk_17",
+          "content": "Portability of Health Insurance\n\nPolicyholders can port their health insurance policy to another insurer at the time of renewal without losing waiting period credits already accrued, provided a portability request is submitted at least 45 days before the renewal date, as per IRDAI portability guidelines."
+        },
+        {
+          "doc_id": "KB006",
+          "category": "exclusions",
+          "title": "Initial Waiting Period",
+          "chunk_id": "chunk_6",
+          "content": "Initial Waiting Period\n\nA waiting period of 30 days from the policy start date applies to all illnesses, except accidental injuries, which are covered from day one. Claims arising from illnesses diagnosed within the first 30 days will not be payable, except in case of accidents."
+        },
+        {
+          "doc_id": "KB008",
+          "category": "exclusions",
+          "title": "Permanent Exclusions",
+          "chunk_id": "chunk_8",
+          "content": "Permanent Exclusions\n\nThe policy does not cover cosmetic or plastic surgery unless necessitated by an accident, treatment for infertility, dental treatment unless requiring hospitalization due to an accident, and any treatment related to self-inflicted injury or substance abuse."
+        }
+      ],
+      "answer_relevance": 1.0,
+      "factual_correctness": 1.0,
+      "response_accuracy": 1.0,
+      "contextual_relevance": 0.8,
+      "simulated_user_satisfaction": 5,
+      "latency_seconds": 1.085,
+      "ragas_faithfulness": 1.0,
+      "hallucination_detected": false,
+      "estimated_input_tokens": 558,
+      "estimated_output_tokens": 81,
+      "embedding_api_cost_usd": 0.0,
+      "estimated_cost_usd": 0.0003699
+    },
+    {
+      "question": "Is maternity covered?",
+      "expected_doc_ids": [
+        "KB017"
+      ],
+      "answer": "Yes, maternity is covered under the **Maternity Cover Add-on** clause, subject to the following:\n\n* **Additional Premium:** It is available only upon the payment of an additional premium.\n* **Coverage Details:** It covers normal delivery and cesarean section expenses, as well as newborn baby cover for the first 90 days.\n* **Waiting Period:** There is a waiting period of 9 to 36 months, depending on the plan.",
+      "retrieved_doc_ids": [
+        "KB017",
+        "KB002",
+        "KB008"
+      ],
+      "sources": [
+        {
+          "doc_id": "KB017",
+          "category": "riders",
+          "title": "Maternity Cover Add-on",
+          "chunk_id": "chunk_18",
+          "content": "Maternity Cover Add-on\n\nThe maternity add-on cover, available on payment of additional premium, covers normal delivery and cesarean section expenses after a waiting period of 9 to 36 months depending on the plan, along with newborn baby cover for the first 90 days."
+        },
+        {
+          "doc_id": "KB002",
+          "category": "coverage",
+          "title": "Pre and Post Hospitalization Expenses",
+          "chunk_id": "chunk_2",
+          "content": "Pre and Post Hospitalization Expenses\n\nMedical expenses incurred up to 30 days before hospitalization and up to 60 days after discharge are covered under the policy, provided they are related to the same illness or injury for which the insured was hospitalized. This includes diagnostic tests, doctor consultations, and prescribed medicines."
+        },
+        {
+          "doc_id": "KB008",
+          "category": "exclusions",
+          "title": "Permanent Exclusions",
+          "chunk_id": "chunk_8",
+          "content": "Permanent Exclusions\n\nThe policy does not cover cosmetic or plastic surgery unless necessitated by an accident, treatment for infertility, dental treatment unless requiring hospitalization due to an accident, and any treatment related to self-inflicted injury or substance abuse."
+        }
+      ],
+      "answer_relevance": 1.0,
+      "factual_correctness": 1.0,
+      "response_accuracy": 1.0,
+      "contextual_relevance": 1.0,
+      "simulated_user_satisfaction": 5,
+      "latency_seconds": 1.1321,
+      "ragas_faithfulness": 1.0,
+      "hallucination_detected": false,
+      "estimated_input_tokens": 559,
+      "estimated_output_tokens": 103,
+      "embedding_api_cost_usd": 0.0,
+      "estimated_cost_usd": 0.0004252
+    },
+    {
+      "question": "What does the critical illness rider cover?",
+      "expected_doc_ids": [
+        "KB018"
+      ],
+      "answer": "According to the Critical Illness Rider clause, the critical illness rider covers a lump sum payout upon the first diagnosis of a listed critical illness, such as cancer, kidney failure, or major organ transplant. \n\nPlease note the following conditions and exceptions:\n* **Survival Period:** This payout is subject to a survival period of 30 days after the diagnosis.\n* **Coverage:** This is provided in addition to your base hospitalization cover. \n\n*Please note: I cannot guarantee claim approval or coverage.*",
+      "retrieved_doc_ids": [
+        "KB018",
+        "KB006",
+        "KB005"
+      ],
+      "sources": [
+        {
+          "doc_id": "KB018",
+          "category": "riders",
+          "title": "Critical Illness Rider",
+          "chunk_id": "chunk_19",
+          "content": "Critical Illness Rider\n\nThe critical illness rider provides a lump sum payout upon first diagnosis of a listed critical illness such as cancer, kidney failure, or major organ transplant, subject to a survival period of 30 days after diagnosis, in addition to the base hospitalization cover."
+        },
+        {
+          "doc_id": "KB006",
+          "category": "exclusions",
+          "title": "Initial Waiting Period",
+          "chunk_id": "chunk_6",
+          "content": "Initial Waiting Period\n\nA waiting period of 30 days from the policy start date applies to all illnesses, except accidental injuries, which are covered from day one. Claims arising from illnesses diagnosed within the first 30 days will not be payable, except in case of accidents."
+        },
+        {
+          "doc_id": "KB005",
+          "category": "exclusions",
+          "title": "Waiting Period for Pre-Existing Diseases",
+          "chunk_id": "chunk_5",
+          "content": "Waiting Period for Pre-Existing Diseases\n\nAny pre-existing disease disclosed at the time of proposal is covered only after a continuous waiting period of 36 months from the policy inception date. Non-disclosed pre-existing conditions discovered later may lead to claim rejection or policy cancellation."
+        }
+      ],
+      "answer_relevance": 1.0,
+      "factual_correctness": 1.0,
+      "response_accuracy": 1.0,
+      "contextual_relevance": 0.67,
+      "simulated_user_satisfaction": 5,
+      "latency_seconds": 1.1789,
+      "ragas_faithfulness": 1.0,
+      "hallucination_detected": false,
+      "estimated_input_tokens": 561,
+      "estimated_output_tokens": 128,
+      "embedding_api_cost_usd": 0.0,
+      "estimated_cost_usd": 0.0004883
+    },
+    {
+      "question": "How can I find a network hospital?",
+      "expected_doc_ids": [
+        "KB019"
+      ],
+      "answer": "According to the Network Hospitals clause, you can find a network hospital by checking the updated list on the insurer's website or mobile app using your pin code or city name.",
+      "retrieved_doc_ids": [
+        "KB019",
+        "KB009",
+        "KB010"
+      ],
+      "sources": [
+        {
+          "doc_id": "KB019",
+          "category": "general",
+          "title": "Network Hospitals",
+          "chunk_id": "chunk_20",
+          "content": "Network Hospitals\n\nThe insurer maintains a network of over 8,000 hospitals across India where cashless treatment facility is available. The updated list of network hospitals can be checked on the insurer's website or mobile app using the pin code or city name."
+        },
+        {
+          "doc_id": "KB009",
+          "category": "claims",
+          "title": "Cashless Claim Process",
+          "chunk_id": "chunk_9",
+          "content": "Cashless Claim Process\n\nFor planned hospitalization, the insured must submit a pre-authorization request through the network hospital's insurance desk at least 48 hours prior to admission. For emergency hospitalization, the pre-authorization request must be submitted within 24 hours of admission. The insurer or TPA reviews and approves the request based on policy terms, and the hospital settles the bill directly with the insurer for the approved amount."
+        },
+        {
+          "doc_id": "KB010",
+          "category": "claims",
+          "title": "Reimbursement Claim Process",
+          "chunk_id": "chunk_11",
+          "content": "Reimbursement Claim Process\n\nFor treatment at a non-network hospital, the insured pays the hospital bill upfront and submits a reimbursement claim within 30 days of discharge. Required documents include the claim form, original discharge summary, original bills and receipts, investigation reports, and the insured's KYC documents."
+        }
+      ],
+      "answer_relevance": 1.0,
+      "factual_correctness": 1.0,
+      "response_accuracy": 1.0,
+      "contextual_relevance": 0.33,
+      "simulated_user_satisfaction": 5,
+      "latency_seconds": 1.1127,
+      "ragas_faithfulness": 1.0,
+      "hallucination_detected": false,
+      "estimated_input_tokens": 603,
+      "estimated_output_tokens": 44,
+      "embedding_api_cost_usd": 0.0,
+      "estimated_cost_usd": 0.00029089999999999997
+    },
+    {
+      "question": "What is the free look period?",
+      "expected_doc_ids": [
+        "KB020"
+      ],
+      "answer": "According to the Free Look Period clause:\n\n* A free look period of 15 to 30 days is provided from the date of receipt of the policy document.\n* During this time, the policyholder can review the terms and cancel the policy if not satisfied.\n* The cancellation is subject to a deduction for any medical check-up cost, stamp duty, and proportionate risk premium for the period of cover.",
+      "retrieved_doc_ids": [
+        "KB020",
+        "KB007",
+        "KB006"
+      ],
+      "sources": [
+        {
+          "doc_id": "KB020",
+          "category": "general",
+          "title": "Free Look Period",
+          "chunk_id": "chunk_21",
+          "content": "Free Look Period\n\nA free look period of 15 to 30 days is provided from the date of receipt of the policy document, during which the policyholder can review the terms and cancel the policy if not satisfied, subject to a deduction for any medical check-up cost, stamp duty, and proportionate risk premium for the period of cover."
+        },
+        {
+          "doc_id": "KB007",
+          "category": "exclusions",
+          "title": "Specific Disease Waiting Period",
+          "chunk_id": "chunk_7",
+          "content": "Specific Disease Waiting Period\n\nTreatment for specific conditions such as cataract, hernia, joint replacement surgery, and hysterectomy is subject to a waiting period of 24 months from policy inception, regardless of whether the condition was pre-existing."
+        },
+        {
+          "doc_id": "KB006",
+          "category": "exclusions",
+          "title": "Initial Waiting Period",
+          "chunk_id": "chunk_6",
+          "content": "Initial Waiting Period\n\nA waiting period of 30 days from the policy start date applies to all illnesses, except accidental injuries, which are covered from day one. Claims arising from illnesses diagnosed within the first 30 days will not be payable, except in case of accidents."
+        }
+      ],
+      "answer_relevance": 1.0,
+      "factual_correctness": 1.0,
+      "response_accuracy": 1.0,
+      "contextual_relevance": 1.0,
+      "simulated_user_satisfaction": 5,
+      "latency_seconds": 1.1216,
+      "ragas_faithfulness": 1.0,
+      "hallucination_detected": false,
+      "estimated_input_tokens": 555,
+      "estimated_output_tokens": 96,
+      "embedding_api_cost_usd": 0.0,
+      "estimated_cost_usd": 0.0004065
+    }
+  ]
+}
