@@ -135,7 +135,8 @@ Production use would require policy-version control, access controls, human esca
 
 ```mermaid
 flowchart TD
-  USER[User enters a policy question]
+    START[Start: streamlit run app.py]
+    USER[User enters a policy question]
 
     subgraph COMPONENTS[Runtime components]
         direction LR
