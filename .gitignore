@@ -1,0 +1,74 @@
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Test, coverage, type-checking and lint caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+
+# Build and package artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Local model, Hugging Face and vector-store artifacts
+.cache/
+huggingface_cache/
+models/
+faiss_index/
+vector_store/
+*.faiss
+*.pkl
+
+# Streamlit secrets (keep config.toml trackable)
+.streamlit/secrets.toml
+
+# Generated local chat exports and logs
+insurance_chat_transcript*.json
+*.log
+logs/
+
+# Temporary evaluation files (keep evaluation_results.json trackable)
+evaluation_results.tmp.json
+evaluation_results_*.tmp.json
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE files
+.vscode/
+.idea/
+*.code-workspace
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary and backup files
+*.tmp
+*.temp
+*.bak
+*.swp
+~$*

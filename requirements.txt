@@ -1,0 +1,24 @@
+# Recommended runtime: Python 3.12
+
+# Application and configuration
+streamlit>=1.45
+python-dotenv>=1.0
+
+# LangChain RAG pipeline
+langchain-core
+langchain-community
+langchain-classic
+langchain-google-genai
+langchain-huggingface
+
+# Local embeddings and vector search
+sentence-transformers
+faiss-cpu
+
+# Gemini SDK and observability
+google-genai
+langsmith
+
+# Evaluation
+ragas>=0.4,<1.0
+instructor[google-genai]>=1.7,<2.0

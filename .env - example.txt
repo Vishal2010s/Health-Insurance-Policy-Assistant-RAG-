@@ -1,0 +1,5 @@
+GEMINI_API_KEY=your_google_api_key
+MODEL_NAME=gemini-3.5-flash-lite
+LANGCHAIN_TRACING_V2=true
+LANGCHAIN_API_KEY=your_Langsmith_api_key
+LANGCHAIN_PROJECT=insurance-rag
