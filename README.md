@@ -135,7 +135,7 @@ Production use would require policy-version control, access controls, human esca
 
 ![Health Insurance RAG system architecture](Images/system-architecture.svg)
 
-The left side shows the runtime components and one-time RAG initialization performed through `master_HF.py`. On the right, the user submits a question from the Streamlit dashboard. MiniLM converts that question into an embedding, and FAISS compares it with the stored policy-clause vectors to identify the three most similar clauses. Those clauses are then added to the grounded Gemini prompt. The fixed SVG preserves this left/right structure consistently on GitHub. Evaluation is not part of the live chatbot request path.
+The left side shows the runtime components and one-time RAG initialization performed through `master_HF.py`. On the right, the user submits a question from the Streamlit dashboard. MiniLM converts that question into an embedding, and FAISS compares it with the stored policy-clause vectors to identify the three most similar clauses. Those clauses are then added to the grounded Gemini prompt. Evaluation is not part of the live chatbot request path.
 
 
 ## Seven-stage RAG pipeline
