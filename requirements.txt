@@ -1,24 +1,23 @@
-# Recommended runtime: Python 3.12
+# Full installation for Dashboard(3).py and master_final.py.
+# Python 3.11+ required (asyncio.Runner); Python 3.11/3.12 recommended.
+# Bounded compatibility ranges, not a fully locked environment.
 
-# Application and configuration
-streamlit>=1.45
-python-dotenv>=1.0
+# RUNTIME: dashboard, index creation and RAG inference
+streamlit>=1.40,<2
+python-dotenv>=1.0,<2
+langchain-core>=1.0,<2
+langchain-classic>=1.0,<2
+langchain-community>=0.4,<0.5
+langchain-google-genai>=4.0,<5
+langchain-huggingface>=1.0,<2
+# Required backend for HuggingFaceEmbeddings (not installed by every integration release).
+sentence-transformers>=3.0,<6
+# CPU FAISS backend; do not replace with the unrelated 'faiss' package.
+faiss-cpu>=1.9,<2
 
-# LangChain RAG pipeline
-langchain-core
-langchain-community
-langchain-classic
-langchain-google-genai
-langchain-huggingface
-
-# Local embeddings and vector search
-sentence-transformers
-faiss-cpu
-
-# Gemini SDK and observability
-google-genai
-langsmith
-
-# Evaluation
-ragas>=0.4,<1.0
-instructor[google-genai]>=1.7,<2.0
+# EVALUATION: required when running master_final.py as supplied.
+# Dashboard(3).py does not import or execute these evaluators.
+ragas>=0.4,<0.5
+instructor[google-genai]>=1.7,<2
+# Shared SDK: directly imported by evaluation, also used by langchain-google-genai.
+google-genai>=1.0,<2
